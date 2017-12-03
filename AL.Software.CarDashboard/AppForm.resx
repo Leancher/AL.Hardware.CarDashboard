@@ -117,7 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="PictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAANRSURBVGhD7Vo7
+        axRRFD5aiIqPRgsRtBCCWFmIVv4BtbGKjSCKCmIdfIConRaSQgIGfGxyJyEiaiwULAXFYsFCCUFEkkpB
+        CxMf+MjO+J3r2XXOndmJ7szszMJ88LE755x7zvn2zszenbtUoUKFzhF4tNU3NIjXuu/RDDjbIaeR5x7Y
+        HwS0VNJ3Byh+BoV/QUSQJZHzmT9KG6RMvmARcU1kRYiZgpg1Ui4foBCfTpnPhEt8WFekZAv+Ldoib9MD
+        Ivia0EUN3QCP4FM83BENDYDvVE6P5oObtFzK8lmwBzHf+WwQUzqgSF0VhAhxpYJfox3hvDb3CO2yPhHR
+        smchBklmVDHMhLhSA7m/qNwsAKdTWETIl04MEsyqhDg1xJUayD2nckOI2GNvLqnEFCGEkbmYooQwMhVT
+        pBBGZmKKFBLcprW48K/B3gjHheL/XUyuQgx9VrnD18h1Wo/jl2F/HNHPCRmSjIgQj66KKxXQwLZwXsn9
+        V4ihR64/joj7hlv2RhnWHhEhhhZgu+SP0V4u3AkDQ4eQ5004r80Nn605TrsjPkM/4H+BVzWL1ufRWdts
+        EhCkhOTJlhCsuxz7R4jrYx+O10HMK+U39Jh9iShECH6rKLuhIduMAHEnld+jt+Jqj4KETCi7oTu2GQFO
+        6wvKjx7F1R4FCTnt2BuwDWCh2YfXg6B7tyutkM3gz7iYOJZWCAPH511/O5ZbSEBLMCtDcXEuSy2kCYjZ
+        Bz4BFySGr5f3zrjSCfkKzuEL8xOO6/j2P84zY/uYoBVBjTZh/bWKl0nOuHIJiSPqR5ZEvSrExwxtl3Ys
+        elKI8JS0Y1F6Iah1DuQnKM+V3dBlaceiF4T8+UL0aFLZKyEhVEI6YFshznNhCDvq+Eu6jPdo2LFPBw9o
+        Jfvs0mWUHiq/oafsS0QhQngDKOrjzaFBUN3RrM/QRdtsEooQgmXIMjT3Oi7GJcbMY4YW3yhCoHqInSeb
+        Qhh4vxNiIg8awkRMAzwgQ5KBAWpbIU9y81LWQsTEzgzsHzAT+yV0cWBAZKMnD6JptdHThJxm/fAPg5N4
+        X0P8MYj4v606DCps6y1zQIh6GJA1kX/Kv0+rpVy+YDF5zAxydm97ugkUzu4PAx7dRa7u/2GgQoUKANFv
+        +n0x2wrqm8cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="PicSpeed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>
