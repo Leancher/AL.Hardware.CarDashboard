@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AL.Software.CarDashboard.GUI", "AL.Software.CarDashboard.GUI\AL.Software.CarDashboard.GUI.vbproj", "{A38F6DC6-9EFF-4043-9514-CF10E26A5BAE}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AL.CarDashboard.GUI", "AL.CarDashboard.GUI\AL.CarDashboard.GUI.vbproj", "{A38F6DC6-9EFF-4043-9514-CF10E26A5BAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
