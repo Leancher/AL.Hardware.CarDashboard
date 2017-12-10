@@ -27,19 +27,19 @@ Partial Class AppForm
         Me.btRev = New System.Windows.Forms.Button()
         Me.btForw = New System.Windows.Forms.Button()
         Me.lbSpeed = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.btLEDoff = New System.Windows.Forms.Button()
         Me.btLEDon = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PicFuelRate = New System.Windows.Forms.PictureBox()
         Me.PicTemp = New System.Windows.Forms.PictureBox()
         Me.PicFuel = New System.Windows.Forms.PictureBox()
         Me.PicSpeed = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicFuelRate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +50,7 @@ Partial Class AppForm
         '
         'btRev
         '
-        Me.btRev.Location = New System.Drawing.Point(12, 251)
+        Me.btRev.Location = New System.Drawing.Point(12, 138)
         Me.btRev.Name = "btRev"
         Me.btRev.Size = New System.Drawing.Size(75, 23)
         Me.btRev.TabIndex = 1
@@ -59,7 +59,7 @@ Partial Class AppForm
         '
         'btForw
         '
-        Me.btForw.Location = New System.Drawing.Point(12, 280)
+        Me.btForw.Location = New System.Drawing.Point(12, 167)
         Me.btForw.Name = "btForw"
         Me.btForw.Size = New System.Drawing.Size(75, 23)
         Me.btForw.TabIndex = 2
@@ -68,26 +68,20 @@ Partial Class AppForm
         '
         'lbSpeed
         '
-        Me.lbSpeed.Font = New System.Drawing.Font("Haettenschweiler", 120.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbSpeed.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbSpeed.Font = New System.Drawing.Font("DejaVu Sans Condensed", 99.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lbSpeed.ForeColor = System.Drawing.Color.Orange
-        Me.lbSpeed.Location = New System.Drawing.Point(224, 114)
+        Me.lbSpeed.Location = New System.Drawing.Point(200, 115)
         Me.lbSpeed.Margin = New System.Windows.Forms.Padding(0)
         Me.lbSpeed.Name = "lbSpeed"
-        Me.lbSpeed.Size = New System.Drawing.Size(383, 169)
+        Me.lbSpeed.Size = New System.Drawing.Size(342, 159)
         Me.lbSpeed.TabIndex = 3
-        Me.lbSpeed.Text = "180"
+        Me.lbSpeed.Text = "199"
         Me.lbSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 309)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox1.TabIndex = 4
         '
         'btLEDoff
         '
-        Me.btLEDoff.Location = New System.Drawing.Point(12, 222)
+        Me.btLEDoff.Location = New System.Drawing.Point(12, 109)
         Me.btLEDoff.Name = "btLEDoff"
         Me.btLEDoff.Size = New System.Drawing.Size(75, 23)
         Me.btLEDoff.TabIndex = 6
@@ -96,7 +90,7 @@ Partial Class AppForm
         '
         'btLEDon
         '
-        Me.btLEDon.Location = New System.Drawing.Point(12, 193)
+        Me.btLEDon.Location = New System.Drawing.Point(12, 80)
         Me.btLEDon.Name = "btLEDon"
         Me.btLEDon.Size = New System.Drawing.Size(75, 23)
         Me.btLEDon.TabIndex = 5
@@ -108,7 +102,7 @@ Partial Class AppForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Orange
-        Me.Label1.Location = New System.Drawing.Point(402, 404)
+        Me.Label1.Location = New System.Drawing.Point(351, 404)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(123, 24)
         Me.Label1.TabIndex = 12
@@ -119,16 +113,20 @@ Partial Class AppForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Orange
-        Me.Label2.Location = New System.Drawing.Point(312, 352)
+        Me.Label2.Location = New System.Drawing.Point(261, 352)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(213, 23)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "РАСХОД ТОПЛИВА"
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 50
+        '
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.Dashboard.My.Resources.Resources.temp
-        Me.PictureBox5.Location = New System.Drawing.Point(626, 406)
+        Me.PictureBox5.Location = New System.Drawing.Point(561, 406)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(50, 50)
         Me.PictureBox5.TabIndex = 14
@@ -146,7 +144,7 @@ Partial Class AppForm
         'PicFuelRate
         '
         Me.PicFuelRate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PicFuelRate.Location = New System.Drawing.Point(316, 379)
+        Me.PicFuelRate.Location = New System.Drawing.Point(265, 379)
         Me.PicFuelRate.Name = "PicFuelRate"
         Me.PicFuelRate.Size = New System.Drawing.Size(209, 22)
         Me.PicFuelRate.TabIndex = 9
@@ -155,7 +153,7 @@ Partial Class AppForm
         'PicTemp
         '
         Me.PicTemp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PicTemp.Location = New System.Drawing.Point(626, 280)
+        Me.PicTemp.Location = New System.Drawing.Point(561, 280)
         Me.PicTemp.Name = "PicTemp"
         Me.PicTemp.Size = New System.Drawing.Size(50, 120)
         Me.PicTemp.TabIndex = 8
@@ -181,19 +179,19 @@ Partial Class AppForm
         Me.PicSpeed.TabIndex = 0
         Me.PicSpeed.TabStop = False
         '
-        'Button1
+        'TextBox2
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 335)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Fuel"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TextBox2.Location = New System.Drawing.Point(12, 38)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(273, 20)
+        Me.TextBox2.TabIndex = 15
         '
-        'Timer1
+        'TextBox1
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 50
+        Me.TextBox1.Location = New System.Drawing.Point(12, 12)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(273, 20)
+        Me.TextBox1.TabIndex = 15
         '
         'AppForm
         '
@@ -201,7 +199,8 @@ Partial Class AppForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(688, 485)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -211,7 +210,6 @@ Partial Class AppForm
         Me.Controls.Add(Me.PicFuel)
         Me.Controls.Add(Me.btLEDoff)
         Me.Controls.Add(Me.btLEDon)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lbSpeed)
         Me.Controls.Add(Me.btForw)
         Me.Controls.Add(Me.btRev)
@@ -219,7 +217,7 @@ Partial Class AppForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AppForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "AppForm"
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicFuelRate, System.ComponentModel.ISupportInitialize).EndInit()
@@ -235,7 +233,6 @@ Partial Class AppForm
     Friend WithEvents btRev As Button
     Friend WithEvents btForw As Button
     Friend WithEvents lbSpeed As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents btLEDoff As Button
     Friend WithEvents btLEDon As Button
     Friend WithEvents PicFuel As PictureBox
@@ -245,6 +242,7 @@ Partial Class AppForm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
 End Class

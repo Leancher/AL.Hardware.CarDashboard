@@ -1,12 +1,25 @@
 ﻿Public Class AppForm
+    Dim ColorObject, ColorBackground, ColorErase As Color
+    Dim Speed, Fuel, Temp, FuelRate, MaxSpeed, MaxFuel, MaxTemp, CurState As Integer
     Private AppCore As New AppCore
-    Dim ColorObject, ColorBackground As Color
-    Dim Speed, Fuel, Temp, FuelRate, MaxSpeed, MaxFuel, MaxTemp As Integer
-    Dim state As Boolean = False
 
-    Private Sub FormInit()
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Try
+            Dim result = AppCore.SimplSerial.Request(0, 1, {})
+            Speed = result.Data(0)
+            UpdateSpeed()
+        Catch ex As Exception
+            TextBox2.Text = ex.Message.ToString
+            If ex.Message.ToString = "Specified port is not open." Or ex.Message.ToString = "Порт закрыт." Then
+                SimplSerialConnect()
+            End If
+        End Try
+    End Sub
+
+    Private Sub SetColor()
         ColorObject = Color.FromArgb(255, 165, 0)
         ColorBackground = Color.FromArgb(64, 64, 64)
+        ColorErase = Color.FromArgb(255, 255, 255)
     End Sub
 
     Private Sub UpdateFuelRate()
@@ -25,6 +38,7 @@
         GraphicFuelRate.Clear(ColorBackground)
         GraphicFuelRate.FillRectangle(brush1, x0, y0, x1, y1)
     End Sub
+
     Private Sub UpdateTemp()
         Dim GraphicTemp As Graphics
         GraphicTemp = PicTemp.CreateGraphics
@@ -39,26 +53,6 @@
         y1 = PicTemp.Height
         GraphicTemp.Clear(ColorBackground)
         GraphicTemp.FillRectangle(brush1, x0, y0, x1, y1)
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim result
-        Try
-            result = AppCore.SimplSerial.Request(0, 1, {})
-            Speed = result.Data(0)
-        Catch ex As Exception
-
-        End Try
-
-        UpdateSpeed()
-        'If state = False Then
-        '    result = AppCore.SimplSerial.Request(0, 4, {})
-        '    state = True
-        '    Exit Sub
-        'Else
-        '    result = AppCore.SimplSerial.Request(0, 5, {})
-        '    state = False
-        'End If
     End Sub
 
     Private Sub UpdateFuel()
@@ -82,7 +76,8 @@
         GraphicSpeed = PicSpeed.CreateGraphics
         Dim Radius, AngleStart, AngleSweep As Integer
         Dim Xarc, Yarc, angle1, angle2, AngleStep As Single
-        Dim Pen1 As New Pen(ColorObject, 20)
+        Dim PenDrawing As New Pen(ColorObject, 20)
+        Dim PenErase As New Pen(ColorErase, 20)
         Radius = 590
         AngleStart = 300
         AngleSweep = 60
@@ -90,16 +85,17 @@
         AngleStep = 0.333
         Xarc = -246.5
         Yarc = 19.5
-        GraphicSpeed.Clear(ColorBackground)
-        GraphicSpeed.DrawImage(My.Resources.SpeedScale, 0, 0)
         If Speed < 0 Then Speed = 0
         If Speed > 180 Then Speed = 180
         lbSpeed.Text = Speed
         angle1 = AngleStart - (MaxSpeed - Speed) * AngleStep
         angle2 = -(AngleSweep - (MaxSpeed - Speed) * AngleStep)
-        GraphicSpeed.DrawArc(Pen1, Xarc, Yarc, Radius * 2, Radius * 2, angle1, angle2)
-        'Graph1.DrawArc(Pen1, x0, y0, radius * 2, radius * 2, 300, -60)
+        GraphicSpeed.DrawArc(PenErase, Xarc, Yarc, Radius * 2, Radius * 2, 300, -60)
+        GraphicSpeed.DrawArc(PenDrawing, Xarc, Yarc, Radius * 2, Radius * 2, angle1, angle2)
     End Sub
+    'GraphicSpeed.Clear(ColorBackground)
+    'GraphicSpeed.DrawImage(My.Resources.SpeedScale, 0, 0)
+    'Graph1.DrawArc(Pen1, x0, y0, radius * 2, radius * 2, 300, -60)
 
     Private Sub btForw_Click(sender As Object, e As EventArgs) Handles btForw.Click
         Speed = Speed + 5
@@ -123,23 +119,26 @@
         UpdateFuelRate()
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim th = New Threading.Thread(AddressOf SimplSerialConnect)
-        th.IsBackground = True
-        th.Start()
-        SimplSerialConnect()
-        FormInit()
+    Private Sub AppForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetColor()
     End Sub
 
     Private Sub SimplSerialConnect()
         AppCore.FindPort()
         If AppCore.SimplSerial.IsConnected = True Then
-            TextBox1.Text = AppCore.PortName + " " + AppCore.DeviceName.DeviceName
+            TextBox1.Text = AppCore.PortName + " " + AppCore.DeviceName
+            TextBox2.Text = ""
         Else
             TextBox1.Text = "No found"
         End If
     End Sub
+
+    Private Sub AppForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        'SimplSerialConnect()
+        Timer1.Enabled = True
+    End Sub
 End Class
+
 'Движение стрелки по кругу
 'Const radian = (22 / 7) / 180
 'Dim a, b

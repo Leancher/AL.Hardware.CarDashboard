@@ -1,15 +1,9 @@
 ﻿Public Class AppCore
-    Private _deviceName As String = "Dashboard"
-    Private _deviceSpeed As Integer = 9600
+    Private DevName As String = "Dashboard"
+    Private DevSpeed As Integer = 9600
     Public SimplSerial As New SimplSerialBus
     Public PortName As String
-    Public DeviceName
-
-    'Public Sub New(ss As SimplSerialBus)
-    '    Dim th = New Threading.Thread(AddressOf FindPort)
-    '    th.IsBackground = True
-    '    th.Start()
-    'End Sub
+    Public Property DeviceName As String = ""
 
     Public Sub FindPort()
         Dim devices = System.IO.Ports.SerialPort.GetPortNames
@@ -17,11 +11,11 @@
             If PortName.ToLower.Contains("com") Or PortName.ToLower.Contains("ttyusb") Then
                 Dim testSS As New SimplSerialBus(PortName)
                 Dim result = ""
-                testSS.SerialDevice.DeviceSpeed = _deviceSpeed
+                testSS.SerialDevice.DeviceSpeed = DevSpeed
                 Try
                     testSS.Connect()
-                    DeviceName = testSS.RequestDeviceInfo(0)
-                    If DeviceName.DeviceName.Contains(_deviceName) Then SimplSerial = testSS
+                    DeviceName = testSS.RequestDeviceInfo(0).DeviceName
+                    If DeviceName.Contains(DevName) Then SimplSerial = testSS
                 Catch ex As Exception
                 End Try
             End If

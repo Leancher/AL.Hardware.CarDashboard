@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Dashboard.My.MyApplication</StartupObject>
     <RootNamespace>Dashboard</RootNamespace>
-    <AssemblyName>Dashboard</AssemblyName>
+    <AssemblyName>AL.Car.Dashboard</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -20,8 +20,8 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Dashboard.xml</DocumentationFile>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DocumentationFile>AL.Car.Dashboard.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,8 +30,8 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Dashboard.xml</DocumentationFile>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DocumentationFile>AL.Car.Dashboard.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -46,18 +46,15 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bwl.Hardware.Serial">
-      <HintPath>..\refs\bwl-hardware-serial\Bwl.Hardware.Serial.dll</HintPath>
-    </Reference>
-    <Reference Include="Bwl.Hardware.Serial.FTDIDevice">
-      <HintPath>..\refs\bwl-hardware-serial\Bwl.Hardware.Serial.FTDIDevice.dll</HintPath>
+      <HintPath>refs\bwl-hardware-serial\Bwl.Hardware.Serial.dll</HintPath>
     </Reference>
     <Reference Include="Bwl.Hardware.SimplSerial">
-      <HintPath>..\refs\bwl-hardware-serial\Bwl.Hardware.SimplSerial.dll</HintPath>
-    </Reference>
-    <Reference Include="FTD2XX_NET">
-      <HintPath>..\refs\bwl-hardware-serial\FTD2XX_NET.dll</HintPath>
+      <HintPath>refs\bwl-hardware-serial\Bwl.Hardware.SimplSerial.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -122,6 +119,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
