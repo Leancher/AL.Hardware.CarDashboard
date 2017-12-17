@@ -71,6 +71,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Ищет локализованную строку, похожую на cat.
+        '''</summary>
+        Friend ReadOnly Property MyCat() As String
+            Get
+                Return ResourceManager.GetString("MyCat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property SpeedScale() As System.Drawing.Bitmap

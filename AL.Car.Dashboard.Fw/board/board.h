@@ -21,7 +21,6 @@
 #include <avr/interrupt.h>
 #include "../refs/bwl_uart.h"
 #include "../refs/bwl_simplserial.h"
-//#include "../refs/bwl_adc.h"
 
 #define getbit(port, bit)		((port) &   (1 << (bit)))
 #define setbit(port,bit,val)	{if ((val)) {(port)|= (1 << (bit));} else {(port) &= ~(1 << (bit));}}
@@ -29,7 +28,6 @@
 typedef unsigned char byte;
 void var_delay_ms(int ms);
 
-void adc_init_channel_0();
 void button_1_enable();
 byte button_1_is_pressed();
 void button_2_enable();

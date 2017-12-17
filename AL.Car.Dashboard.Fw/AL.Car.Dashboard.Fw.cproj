@@ -27,7 +27,7 @@
     <BootSegment>2</BootSegment>
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <avrtool>com.atmel.avrdbg.tool.atmelice</avrtool>
-    <avrtoolserialnumber>J41800045060</avrtoolserialnumber>
+    <avrtoolserialnumber>J41800006313</avrtoolserialnumber>
     <avrdeviceexpectedsignature>0x1E9511</avrdeviceexpectedsignature>
     <com_atmel_avrdbg_tool_atmelice>
       <ToolOptions>
@@ -37,7 +37,7 @@
         <InterfaceName>JTAG</InterfaceName>
       </ToolOptions>
       <ToolType>com.atmel.avrdbg.tool.atmelice</ToolType>
-      <ToolNumber>J41800045060</ToolNumber>
+      <ToolNumber>J41800006313</ToolNumber>
       <ToolName>Atmel-ICE</ToolName>
     </com_atmel_avrdbg_tool_atmelice>
     <avrtoolinterface>JTAG</avrtoolinterface>
@@ -143,12 +143,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="refs\bwl_simplserial_ext.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="refs\bwl_strings.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="refs\bwl_strings.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="refs\bwl_uart.c">

@@ -1,4 +1,5 @@
 ﻿Public Class AppCore
+    'Private FilePath As String = My.Resources.data
     Private DevName As String = "Dashboard"
     Private DevSpeed As Integer = 9600
     Public SimplSerial As New SimplSerialBus
@@ -22,4 +23,15 @@
         Next
         Threading.Thread.Sleep(500)
     End Sub
+    Public Function ReadDataFromFile()
+        Dim currentRow As String() = {"test"}
+        Using MyReader As New FileIO.TextFieldParser(My.Resources.MyCat)
+            MyReader.TextFieldType = FileIO.FieldType.Delimited
+            MyReader.SetDelimiters(",")
+            While Not MyReader.EndOfData
+                currentRow = MyReader.ReadFields()
+            End While
+        End Using
+        Return currentRow
+    End Function
 End Class
