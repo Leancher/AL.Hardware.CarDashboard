@@ -127,7 +127,82 @@
   <data name="temp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\temp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MyCat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MyCat.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  <data name="accident_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\accident_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="accident_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\accident_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="at_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\at_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="at_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\at_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bat_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bat_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bat_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bat_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bat_er_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bat_er_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="belt_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\belt_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="belt_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\belt_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brake_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brake_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brake_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brake_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="door_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\door_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="door_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\door_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="high_beam_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\high_beam_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="low_beam_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\low_beam_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="low_beam_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\low_beam_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="od_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\od_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="od_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\od_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="oil_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\oil_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="oil_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\oil_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turn_lf_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turn_lf_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turn_lf_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turn_lf_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turn_rt_dis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turn_rt_dis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turn_rt_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turn_rt_en.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

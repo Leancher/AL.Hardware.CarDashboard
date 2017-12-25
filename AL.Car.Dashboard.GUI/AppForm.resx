@@ -145,4 +145,18 @@
   <metadata name="PicSpeed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="PicBat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAAGoSURBVGhD7Zg/
+        S8NQFMVDa7VaS62lgrR0ExfBwUkQdHEXxMXJycFJcHJRR79AN9em+aMN2qVbwFnFxU/g5lZwbO/15XEp
+        Sh6FJkVf6v3BGXK4yb0HXt4jMRiGYRiG+U+AVz0EO++r1HeLLSqLDbaWrtEtOEp51T0qiw66pStsGKgS
+        mJkPKosNWLk3VQ8pMQOVRSeRQfDpOIP3tYMfckuO8uFCIkg3VB9RYM29q3pIBTN8r/Vq++hfTtHYYeBx
+        q6x8kIaCl/MyjR1mIoOAPd8RO4ZYWvoImtnO6EHcYp1sbRBB6okJ0rNyp2jNOGIXuyFrQKKCoDktd8l+
+        Ix3a2mMFgdvKimq9BoK75V154xjoOfkjsGZPwEw/y/5m6lNeC6FX2whqYgUZeiCKQ0zeOAaCw1XVQ4oO
+        RA4ivV9aWvCwtont1R2wsr7sb6a7wbX02usVWcMv+x/Qsxcv5GeCs+CRNSBRQYbBQcjWBg5CtjZwELK1
+        gYOQrQ0chGxtiBQEzRRiM6OXgplGDqK5hgZBf3tefGeofyRrJLALFrye5WhshmEYhmEmDMP4AqpSrM2t
+        5xCHAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

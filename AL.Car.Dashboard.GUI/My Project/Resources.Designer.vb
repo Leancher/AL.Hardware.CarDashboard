@@ -63,6 +63,156 @@ Namespace My.Resources
         '''<summary>
         '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property accident_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("accident_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property accident_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("accident_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property at_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("at_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property at_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("at_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property bat_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bat_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property bat_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bat_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property bat_er_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bat_er_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property belt_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("belt_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property belt_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("belt_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property brake_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("brake_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property brake_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("brake_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property check_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("check_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property check_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("check_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property door_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("door_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property door_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("door_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property fuel() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("fuel", resourceCulture)
@@ -71,11 +221,72 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Ищет локализованную строку, похожую на cat.
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property MyCat() As String
+        Friend ReadOnly Property high_beam_en() As System.Drawing.Bitmap
             Get
-                Return ResourceManager.GetString("MyCat", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("high_beam_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property low_beam_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("low_beam_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property low_beam_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("low_beam_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property od_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("od_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property od_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("od_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property oil_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("oil_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property oil_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("oil_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -95,6 +306,46 @@ Namespace My.Resources
         Friend ReadOnly Property temp() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("temp", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property turn_lf_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("turn_lf_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property turn_lf_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("turn_lf_en", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property turn_rt_dis() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("turn_rt_dis", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property turn_rt_en() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("turn_rt_en", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

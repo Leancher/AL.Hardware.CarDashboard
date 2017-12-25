@@ -27,6 +27,7 @@
     Private Sub GetData()
         TextBox2.Text = ""
         TextBox3.Text = ""
+        Dim Diff As Double
         Try
             'Получаем ширину импулься форсунки
             Dim result = AppCore.SimplSerial.Request(0, 1, {})
@@ -35,16 +36,19 @@
             InjWidthLLev = result.Data(1)
             'Складываем высокий и низкий уровни, получаем период, делим 1000 млс на кол-во периодов, умножаем на высокий уровень, получаем время открытия за 1с
             InjSumHighLev = (1000 / (InjWidthLLev + InjWidthHLev)) * InjWidthHLev
+
             'Получаем ширину импульса скорости
             result = AppCore.SimplSerial.Request(0, 2, {})
             SpdWidthHLev = result.Data(0)
             SpdWidthLLev = result.Data(1)
-            'Если получили ноль, то будет ошибка при делнии на ноль, устанавливаем макс. значение
+            'Если получили ноль, то будет ошибка при делении на ноль, устанавливаем макс. значение
             If SpdWidthHLev = 0 Then SpdWidthHLev = 500
             'Ширина импульса при котором уже можно считать - 40мс
             'Высокий и низкий уровни одинаковой ширины, меняется только частота
             SpdImpCountOverTime = 1000 / (SpdWidthHLev * 2)
-            TextBox4.Text = SpdWidthHLev.ToString + " " + SpdWidthLLev.ToString + " " + SpdImpCountOverTime.ToString
+            Dim SpdVals = Speed.ToString + ";" + SpdWidthHLev.ToString + ";" + SpdWidthLLev.ToString + ";" + SpdImpCountOverTime.ToString
+            If SpdWidthHLev < 40 Then ListBox1.Items.Add(SpdVals)
+            TextBox4.Text = SpdVals.ToString
             ProcessData()
             ShowSpeed()
             ShowFuelRate()
@@ -72,21 +76,24 @@
         'ВЫЧИСЛЯЕМ СКОРОСТЬ
         '3.6 км/ч в 1 м/с
         SpdImpCountOverTime = SpdImpCountOverTime / SpeedCorrection
-
         Speed = SpdImpCountOverTime * LenghWheel * 3.6
-        If SpdImpCountOverTime < 2 Then Speed = 0
-        'ВЫЧИСЛЯЕМ РАСХОД
-        'Расход в мл/с, время открытия в мс, делим на 1000, получаем в сек
-        FuelRateMlS = InjSumHighLev / 1000 * InJCapacity
-        'Если скорость меньше 1 (холостой ход), считаем л/ч
-        '3600 делим сразу на 1000 получаем 3.6
-        FuelRateLH = FuelRateMlS * 3.6
-        'Расход в л/100км
-        'Делим путь на скорость, получаем время в часах, умножаем на 3600, получаем в секундах
-        'Умножаем на расход в мл/с, делим на 1000 для результата в литрах
-        '3600 делим сразу на 1000 получаем 3.6
-        FuelRateL100km = 100 / Speed * FuelRateMlS * 3.6
-        TextBox3.Text = InjSumHighLev.ToString("0.00") + " " + FuelRateLH.ToString("0.00") + " " + InjWidthHLev.ToString + " " + InjWidthLLev.ToString
+        If SpdImpCountOverTime < 3 Then Speed = 0
+        If InjSumHighLev > 1 Then
+            'ВЫЧИСЛЯЕМ РАСХОД
+            'Расход в мл/с, время открытия в мс, делим на 1000, получаем в сек
+            FuelRateMlS = InjSumHighLev / 1000 * InJCapacity
+            'Если скорость меньше 1 (холостой ход), считаем л/ч
+            '3600 делим сразу на 1000 получаем 3.6
+            FuelRateLH = FuelRateMlS * 3.6
+            'Расход в л/100км
+            'Делим путь на скорость, получаем время в часах, умножаем на 3600, получаем в секундах
+            'Умножаем на расход в мл/с, делим на 1000 для результата в литрах
+            '3600 делим сразу на 1000 получаем 3.6
+            FuelRateL100km = 100 / Speed * FuelRateMlS * 3.6
+            Dim InjVals = InjSumHighLev.ToString("0.00") + " " + FuelRateLH.ToString("0.00") + " " + InjWidthHLev.ToString + " " + InjWidthLLev.ToString
+            TextBox3.Text = InjVals.ToString
+            ListBox2.Items.Add(InjVals)
+        End If
     End Sub
 
     Private Sub ShowFuelRate()
@@ -109,35 +116,35 @@
     End Sub
 
     Private Sub UpdateTemp()
-        Dim GraphicTemp As Graphics
-        GraphicTemp = PicTemp.CreateGraphics
-        MaxTemp = 100
-        If Temp < 0 Then Temp = 0
-        If Temp > MaxTemp Then Temp = MaxTemp
-        Dim x0, y0, x1, y1 As Integer
-        Dim brush1 As New SolidBrush(ColorObject)
-        x0 = 0
-        y0 = PicTemp.Height - (PicTemp.Height / MaxTemp * Temp)
-        x1 = PicTemp.Width
-        y1 = PicTemp.Height
-        GraphicTemp.Clear(ColorBackground)
-        GraphicTemp.FillRectangle(brush1, x0, y0, x1, y1)
+        'Dim GraphicTemp As Graphics
+        'GraphicTemp = PicTemp.CreateGraphics
+        'MaxTemp = 100
+        'If Temp < 0 Then Temp = 0
+        'If Temp > MaxTemp Then Temp = MaxTemp
+        'Dim x0, y0, x1, y1 As Integer
+        'Dim brush1 As New SolidBrush(ColorObject)
+        'x0 = 0
+        'y0 = PicTemp.Height - (PicTemp.Height / MaxTemp * Temp)
+        'x1 = PicTemp.Width
+        'y1 = PicTemp.Height
+        'GraphicTemp.Clear(ColorBackground)
+        'GraphicTemp.FillRectangle(brush1, x0, y0, x1, y1)
     End Sub
 
     Private Sub UpdateFuel()
-        Dim GraphicFuel As Graphics
-        GraphicFuel = PicFuel.CreateGraphics
-        MaxFuel = 36
-        If Fuel < 0 Then Fuel = 0
-        If Fuel > MaxFuel Then Fuel = MaxFuel
-        Dim x0, y0, x1, y1 As Integer
-        Dim brush1 As New SolidBrush(ColorObject)
-        x0 = 0
-        y0 = PicFuel.Height - (PicFuel.Height / MaxFuel * Fuel)
-        x1 = PicFuel.Width
-        y1 = PicFuel.Height
-        GraphicFuel.Clear(ColorBackground)
-        GraphicFuel.FillRectangle(brush1, x0, y0, x1, y1)
+        'Dim GraphicFuel As Graphics
+        'GraphicFuel = PicFuel.CreateGraphics
+        'MaxFuel = 36
+        'If Fuel < 0 Then Fuel = 0
+        'If Fuel > MaxFuel Then Fuel = MaxFuel
+        'Dim x0, y0, x1, y1 As Integer
+        'Dim brush1 As New SolidBrush(ColorObject)
+        'x0 = 0
+        'y0 = PicFuel.Height - (PicFuel.Height / MaxFuel * Fuel)
+        'x1 = PicFuel.Width
+        'y1 = PicFuel.Height
+        'GraphicFuel.Clear(ColorBackground)
+        'GraphicFuel.FillRectangle(brush1, x0, y0, x1, y1)
     End Sub
 
     Private Sub ShowSpeed()

@@ -141,7 +141,91 @@
     <None Include="Resources\temp.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MyCat.txt" />
+    <None Include="Resources\high_beam_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\low_beam_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\low_beam_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat_err_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\belt_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\belt_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oil_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oil_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brake_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brake_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\od_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\od_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_all_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_all_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_lf_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_rt_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat_er_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accident_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accident_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_lf_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn_rt_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bat_en.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
