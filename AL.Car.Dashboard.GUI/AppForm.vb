@@ -1,10 +1,10 @@
 ﻿Public Class AppForm
     Private AppCore As New AppCore
     Dim ColorObject, ColorBackground, ColorErase As Color
-    Dim Speed, Fuel, Temp, MaxSpeed, MaxFuel, MaxTemp, SpdImpCountOverTime As Integer
+    Dim Fuel, Temp, MaxSpeed, MaxFuel, MaxTemp As Integer
     Dim FuelRateMlS, FuelRateL100km, FuelRateLH As Double
     Dim InjSumHighLev, InjWidthHLev, InjWidthLLev As Double
-    Dim SpdWidthHLev, SpdWidthLLev, SpdSumPeriod As Double
+    Dim SpdWidthHLev, SpdWidthLLev, SpdImpCountOverTime, Speed As Double
 
     Private Sub btLEDoff_Click(sender As Object, e As EventArgs) Handles btLEDoff.Click
         Dim result = AppCore.SimplSerial.Request(0, 5, {})
@@ -27,7 +27,6 @@
     Private Sub GetData()
         TextBox2.Text = ""
         TextBox3.Text = ""
-        Dim Diff As Double
         Try
             'Получаем ширину импулься форсунки
             Dim result = AppCore.SimplSerial.Request(0, 1, {})
@@ -42,13 +41,11 @@
             SpdWidthHLev = result.Data(0)
             SpdWidthLLev = result.Data(1)
             'Если получили ноль, то будет ошибка при делении на ноль, устанавливаем макс. значение
-            If SpdWidthHLev = 0 Then SpdWidthHLev = 500
+            If SpdWidthHLev = 0 Then SpdWidthHLev = 40
             'Ширина импульса при котором уже можно считать - 40мс
             'Высокий и низкий уровни одинаковой ширины, меняется только частота
             SpdImpCountOverTime = 1000 / (SpdWidthHLev * 2)
-            Dim SpdVals = Speed.ToString + ";" + SpdWidthHLev.ToString + ";" + SpdWidthLLev.ToString + ";" + SpdImpCountOverTime.ToString
-            If SpdWidthHLev < 40 Then ListBox1.Items.Add(SpdVals)
-            TextBox4.Text = SpdVals.ToString
+
             ProcessData()
             ShowSpeed()
             ShowFuelRate()
@@ -67,7 +64,7 @@
     Private Sub ProcessData()
         '130 производительность в мл/мин, делим на 60, получаем в мл/сек, умножаем на кол-во форсунок
         Dim InJCapacity As Double = 130 / 60 * 3
-        Dim SpeedCorrection As Integer = 13
+        Dim SpeedCorrection As Double = 12.5
         '0.025м в дюйме
         '13 радиус колеса в дюймах
         '2*3.14 - пи*2*радиус - длина окружности (колеса)
@@ -77,7 +74,10 @@
         '3.6 км/ч в 1 м/с
         SpdImpCountOverTime = SpdImpCountOverTime / SpeedCorrection
         Speed = SpdImpCountOverTime * LenghWheel * 3.6
-        If SpdImpCountOverTime < 3 Then Speed = 0
+        Dim SpdVals = Speed.ToString("0.0") + ";" + SpdWidthHLev.ToString + ";" + SpdWidthLLev.ToString + ";" + SpdImpCountOverTime.ToString("0.0")
+        If SpdWidthHLev < 40 Then ListBox1.Items.Add(SpdVals)
+        TextBox4.Text = SpdVals.ToString
+        If SpdWidthHLev > 38 Then Speed = 0
         If InjSumHighLev > 1 Then
             'ВЫЧИСЛЯЕМ РАСХОД
             'Расход в мл/с, время открытия в мс, делим на 1000, получаем в сек
@@ -163,7 +163,7 @@
         Yarc = 19.5
         If Speed < 0 Then Speed = 0
         If Speed > 180 Then Speed = 180
-        lbSpeed.Text = Speed
+        lbSpeed.Text = Speed.ToString("0")
         angle1 = AngleStart - (MaxSpeed - Speed) * AngleStep
         angle2 = -(AngleSweep - (MaxSpeed - Speed) * AngleStep)
         GraphicSpeed.DrawArc(PenErase, Xarc, Yarc, Radius * 2, Radius * 2, 300, -60)
@@ -211,7 +211,7 @@
 
     Private Sub AppForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         SimplSerialConnect()
-        Timer1.Interval = 500
+        Timer1.Interval = 250
         Timer1.Enabled = True
     End Sub
 End Class

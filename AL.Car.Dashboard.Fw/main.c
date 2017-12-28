@@ -4,7 +4,6 @@ float inj_width_h_lev = 0;
 float inj_width_l_lev = 0;
 float spd_width_h_lev = 0;
 float spd_width_l_lev = 0;
-
 //»змерение длительности импульса скорости, высокий и низкий уровни одинаковой ширины, мен€етс€ частота
 //ћер€ем ширину только выского уровн€
 //Ўирина 40мс (5000) с которой можно начинать считать
@@ -12,21 +11,21 @@ void measure_speed_impulse()
 {
 	TCNT1 = 0;
 	//»щем начало высокого уровн€, ждем пока пройдет 1
-	while (get_pb4_in() == 1)
+	while (get_pb3_in() == 1)
 	{
 		//≈сли долго считает, то нет импульса
 		if (TCNT1 > 5000) break;
 	}
 	TCNT1 = 0;
 	//∆дем пока пройдет 0
-	while (get_pb4_in() == 0)
+	while (get_pb3_in() == 0)
 	{
 		if (TCNT1 > 5000) break;
 	}
 	spd_width_l_lev = TCNT1 * 0.008;
 	TCNT1 = 0;
 	//ждем пока пройдет 1
-	while (get_pb4_in() == 1)
+	while (get_pb3_in() == 1)
 	{
 		if (TCNT1 > 5000) break;
 	}
@@ -126,7 +125,7 @@ int main(void)
 	uart_init_withdivider(UART_USB,UBRR_VALUE);
 	_delay_ms(500);
 	set_board_green_led(1);
-	//pb4_in_enable();
+	pb3_in_enable();
 	pb5_in_enable();
 
 	//предделитель на 64, 125к√ц, 0.008млс

@@ -37,8 +37,8 @@ void pb3_in_enable()
 
 byte get_pb3_in()
 {
-	if (getbit(PINB,3)) {return 0;}
-	return 1;
+	if (getbit(PINB,3)==0) {return 1;}
+	return 0;
 }
 
 void pb4_in_enable()
@@ -49,7 +49,7 @@ void pb4_in_enable()
 
 byte get_pb4_in()
 {
-	if (getbit(PINB,4)) {return 1;}
+	if (getbit(PINB,4)==0) {return 1;}
 	return 0;
 }
 
